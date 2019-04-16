@@ -17,10 +17,10 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg">
 <meta property="og:image" content="https://pic3.zhimg.com/80/v2-07f09d8bb03f4b8e10739f39d0cf53da_hd.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-01f24fda0c18938012e4c0bd4611e9b3_hd.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-8e13a31042085b1264dc49dd2f41a808_hd.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-789c813d0f551b0a2cb0705c705e47ec_hd.jpg">
-<meta property="og:updated_time" content="2019-04-16T05:36:24.395Z">
+<meta property="og:image" content="http://yoursite.com/2019/04/15/vue探索之路-生命周期钩子函数/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/15/vue探索之路-生命周期钩子函数/2.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/15/vue探索之路-生命周期钩子函数/3.jpg">
+<meta property="og:updated_time" content="2019-04-16T07:34:29.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue探索之路--生命周期钩子函数">
 <meta name="twitter:description" content="点击阅读更多">
@@ -257,16 +257,14 @@
 </code></pre><p><img src="https://pic3.zhimg.com/80/v2-07f09d8bb03f4b8e10739f39d0cf53da_hd.jpg" alt="图片"></p>
 <p><strong>根据運行結果 我們可以看出來：</strong></p>
 <p><code>beforecreated</code>：<code>el</code> 和 <code>data</code> 并未初始化<br><code>created</code>:完成了 <code>data</code> 数据的初始化，<code>el</code>没有<br><code>beforeMount</code>：完成了 <code>el</code> 和 <code>data</code> 初始化<br><code>mounted</code> ：完成挂载另外在标红处，在挂載之前我们能发现<code>el</code>还是 <code></code>，</p>
-<p><img src="https://pic4.zhimg.com/80/v2-01f24fda0c18938012e4c0bd4611e9b3_hd.jpg" alt></p>
+<p><img src="/2019/04/15/vue探索之路-生命周期钩子函数/1.jpg" alt="logo"></p>
 <p>这里就是应用的 Virtual DOM（虚拟Dom）技术，先把坑占住了。到后面<code>mounted</code>挂载的时候再把值渲染进去。</p>
 <p>接下來我們看<code>update</code>鈎子函數：</p>
 <p>在控制台輸入<code>：app.message= &#39;yes !! I do&#39;;</code>会触发<code>beforeupdate</code>和<code>update</code>函数</p>
-<p><img src="https://pic1.zhimg.com/80/v2-8e13a31042085b1264dc49dd2f41a808_hd.jpg" alt></p>
-<p><strong><code>destroy</code> 相关</strong><br>在console里执行下命令对 vue实例进行销毁。</p>
+<p><img src="/2019/04/15/vue探索之路-生命周期钩子函数/2.jpg" alt="logo"><br><strong><code>destroy</code> 相关</strong><br>在console里执行下命令对 vue实例进行销毁。</p>
 <p>在console中把实例销毁：触发<code>destory</code>函数</p>
 <pre><code>app.$destroy();
-</code></pre><p><img src="https://pic1.zhimg.com/80/v2-789c813d0f551b0a2cb0705c705e47ec_hd.jpg" alt></p>
-<p>我们再重新改变message的值，vue不再对此动作进行响应了。但是原先生成的dom元素还存在，可以这么理解，执行了destroy操作。</p>
+</code></pre><p><img src="/2019/04/15/vue探索之路-生命周期钩子函数/3.jpg" alt="logo"><br>我们再重新改变message的值，vue不再对此动作进行响应了。但是原先生成的dom元素还存在，可以这么理解，执行了destroy操作。</p>
 <p>##[我的官网]:<br>   <a href="http://www.liukek.club" target="_blank" rel="noopener">www.liukek.club</a></p>
 
       
@@ -361,7 +359,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/16/通过github创建一个个博客/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/04/16/通过github创建一个个人博客/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
