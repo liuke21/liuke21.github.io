@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue探索之路--生命周期钩子函数 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对于执行顺序和什么时候，下面我们将结合代码去看看钩子函数的执行: &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt;     &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;     &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://cdn.jsdelivr.net/vue/">
+  <meta name="description" content="对于执行顺序和什么时候，下面我们将结合代码去看看钩子函数的执行: &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt;     &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;     &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://cdn.jsdelivr.net/vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue探索之路--生命周期钩子函数">
 <meta property="og:url" content="http://yoursite.com/2019/04/15/vue探索之路-生命周期钩子函数/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="对于执行顺序和什么时候，下面我们将结合代码去看看钩子函数的执行: &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt;     &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;     &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://cdn.jsdelivr.net/vue/">
+<meta property="og:description" content="对于执行顺序和什么时候，下面我们将结合代码去看看钩子函数的执行: &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt;     &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;     &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://cdn.jsdelivr.net/vue">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg">
 <meta property="og:image" content="https://pic3.zhimg.com/80/v2-07f09d8bb03f4b8e10739f39d0cf53da_hd.jpg">
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-01f24fda0c18938012e4c0bd4611e9b3_hd.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/80/v2-8e13a31042085b1264dc49dd2f41a808_hd.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/80/v2-789c813d0f551b0a2cb0705c705e47ec_hd.jpg">
-<meta property="og:updated_time" content="2019-04-15T14:39:40.715Z">
+<meta property="og:updated_time" content="2019-04-16T05:10:54.866Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue探索之路--生命周期钩子函数">
-<meta name="twitter:description" content="对于执行顺序和什么时候，下面我们将结合代码去看看钩子函数的执行: &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt;     &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;     &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://cdn.jsdelivr.net/vue/">
+<meta name="twitter:description" content="对于执行顺序和什么时候，下面我们将结合代码去看看钩子函数的执行: &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt;     &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;     &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://cdn.jsdelivr.net/vue">
 <meta name="twitter:image" content="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -176,7 +176,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg" alt="图片"><br>对于执行顺序和什么时候，下面我们将结合代码去看看钩子函数的执行:</p>
+        <a id="more"></a>
+<p><img src="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg" alt="图片"><br>对于执行顺序和什么时候，下面我们将结合代码去看看钩子函数的执行:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -194,18 +195,18 @@
   var app = new Vue({
       el: &apos;#app&apos;,
       data: {
-          message : &quot;xuxiao is boy&quot; 
+          message : &quot;xuxiao is boy&quot;
       },
       beforeCreate: function () {
                 console.group(&apos;beforeCreate 创建前状态===============》&apos;);
                console.log(&quot;%c%s&quot;, &quot;color:red&quot; , &quot;el     : &quot; + this.$el); //undefined
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); //undefined 
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); //undefined
                console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message)  //undefined
         },
         created: function () {
             console.group(&apos;created 创建完毕状态===============》&apos;);
             console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;el     : &quot; + this.$el); //undefined
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); //已被初始化 
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); //已被初始化
                console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message); //已被初始化
         },
         beforeMount: function () {
@@ -220,34 +221,34 @@
             console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;el     : &quot; + this.$el); //已被初始化
             console.log(this.$el);    
                console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); //已被初始化
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message); //已被初始化 
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message); //已被初始化
         },
         beforeUpdate: function () {
             console.group(&apos;beforeUpdate 更新前状态===============》&apos;);
             console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;el     : &quot; + this.$el);
             console.log(this.$el);   
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); 
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message); 
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data);
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message);
         },
         updated: function () {
             console.group(&apos;updated 更新完成状态===============》&apos;);
             console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;el     : &quot; + this.$el);
-            console.log(this.$el); 
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); 
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message); 
+            console.log(this.$el);
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data);
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message);
         },
         beforeDestroy: function () {
             console.group(&apos;beforeDestroy 销毁前状态===============》&apos;);
             console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;el     : &quot; + this.$el);
             console.log(this.$el);    
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); 
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message); 
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data);
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message);
         },
         destroyed: function () {
             console.group(&apos;destroyed 销毁完成状态===============》&apos;);
             console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;el     : &quot; + this.$el);
             console.log(this.$el);  
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); 
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data);
                console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message)
         }
     })

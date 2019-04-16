@@ -168,7 +168,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg" alt="图片"><br>对于执行顺序和什么时候，下面我们将结合代码去看看钩子函数的执行:</p>
+        <a id="more"></a>
+<p><img src="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg" alt="图片"><br>对于执行顺序和什么时候，下面我们将结合代码去看看钩子函数的执行:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -186,18 +187,18 @@
   var app = new Vue({
       el: &apos;#app&apos;,
       data: {
-          message : &quot;xuxiao is boy&quot; 
+          message : &quot;xuxiao is boy&quot;
       },
       beforeCreate: function () {
                 console.group(&apos;beforeCreate 创建前状态===============》&apos;);
                console.log(&quot;%c%s&quot;, &quot;color:red&quot; , &quot;el     : &quot; + this.$el); //undefined
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); //undefined 
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); //undefined
                console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message)  //undefined
         },
         created: function () {
             console.group(&apos;created 创建完毕状态===============》&apos;);
             console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;el     : &quot; + this.$el); //undefined
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); //已被初始化 
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); //已被初始化
                console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message); //已被初始化
         },
         beforeMount: function () {
@@ -212,34 +213,34 @@
             console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;el     : &quot; + this.$el); //已被初始化
             console.log(this.$el);    
                console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); //已被初始化
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message); //已被初始化 
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message); //已被初始化
         },
         beforeUpdate: function () {
             console.group(&apos;beforeUpdate 更新前状态===============》&apos;);
             console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;el     : &quot; + this.$el);
             console.log(this.$el);   
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); 
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message); 
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data);
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message);
         },
         updated: function () {
             console.group(&apos;updated 更新完成状态===============》&apos;);
             console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;el     : &quot; + this.$el);
-            console.log(this.$el); 
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); 
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message); 
+            console.log(this.$el);
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data);
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message);
         },
         beforeDestroy: function () {
             console.group(&apos;beforeDestroy 销毁前状态===============》&apos;);
             console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;el     : &quot; + this.$el);
             console.log(this.$el);    
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); 
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message); 
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data);
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message);
         },
         destroyed: function () {
             console.group(&apos;destroyed 销毁完成状态===============》&apos;);
             console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;el     : &quot; + this.$el);
             console.log(this.$el);  
-               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data); 
+               console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;data   : &quot; + this.$data);
                console.log(&quot;%c%s&quot;, &quot;color:red&quot;,&quot;message: &quot; + this.message)
         }
     })
