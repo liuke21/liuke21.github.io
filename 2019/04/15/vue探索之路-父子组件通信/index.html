@@ -8,19 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue探索之路--父子组件通信 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.props和$emit:父组件向子组件传递数据是通过prop传递的，子组件传递数据给父组件是通过$emit触发事件来做到的。 Vue.component(&amp;apos;child&amp;apos;,{ data(){ return { mymessage:this.message } }, template:` &amp;lt;div&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; v-">
+  <meta name="description" content="1.props和$emit:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue探索之路--父子组件通信">
 <meta property="og:url" content="http://yoursite.com/2019/04/15/vue探索之路-父子组件通信/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.props和$emit:父组件向子组件传递数据是通过prop传递的，子组件传递数据给父组件是通过$emit触发事件来做到的。 Vue.component(&amp;apos;child&amp;apos;,{ data(){ return { mymessage:this.message } }, template:` &amp;lt;div&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; v-">
+<meta property="og:description" content="1.props和$emit:">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg">
-<meta property="og:updated_time" content="2019-04-16T05:47:44.239Z">
+<meta property="og:updated_time" content="2019-04-16T07:03:01.069Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue探索之路--父子组件通信">
-<meta name="twitter:description" content="1.props和$emit:父组件向子组件传递数据是通过prop传递的，子组件传递数据给父组件是通过$emit触发事件来做到的。 Vue.component(&amp;apos;child&amp;apos;,{ data(){ return { mymessage:this.message } }, template:` &amp;lt;div&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; v-">
-<meta name="twitter:image" content="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg">
+<meta name="twitter:description" content="1.props和$emit:">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -172,7 +170,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>1.props和$emit:</strong><br><img src="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg" alt="图片"><br>父组件向子组件传递数据是通过prop传递的，子组件传递数据给父组件是通过$emit触发事件来做到的。</p>
+        <p><strong>1.props和$emit:</strong><br><a id="more"></a><br>父组件向子组件传递数据是通过prop传递的，子组件传递数据给父组件是通过$emit触发事件来做到的。</p>
 <pre><code>Vue.component(&apos;child&apos;,{
 data(){
 return {
