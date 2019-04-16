@@ -15,16 +15,15 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="点击阅读更多">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-07f09d8bb03f4b8e10739f39d0cf53da_hd.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/15/vue探索之路-生命周期钩子函数/1.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/04/15/vue探索之路-生命周期钩子函数/1.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/04/15/vue探索之路-生命周期钩子函数/2.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/04/15/vue探索之路-生命周期钩子函数/3.jpg">
-<meta property="og:updated_time" content="2019-04-16T07:34:29.199Z">
+<meta property="og:updated_time" content="2019-04-16T07:38:03.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue探索之路--生命周期钩子函数">
 <meta name="twitter:description" content="点击阅读更多">
-<meta name="twitter:image" content="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/15/vue探索之路-生命周期钩子函数/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -176,7 +175,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>点击阅读更多<br><a id="more"></a><br><img src="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg" alt="图片"><br>对于执行顺序和什么时候，下面我们将结合代码去看看钩子函数的执行:</p>
+        <p>点击阅读更多<br><a id="more"></a><br><img src="/2019/04/15/vue探索之路-生命周期钩子函数/1.jpg" alt="logo"><br>对于执行顺序和什么时候，下面我们将结合代码去看看钩子函数的执行:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -254,8 +253,8 @@
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p><img src="https://pic3.zhimg.com/80/v2-07f09d8bb03f4b8e10739f39d0cf53da_hd.jpg" alt="图片"></p>
-<p><strong>根据運行結果 我們可以看出來：</strong></p>
+![logo](通过github创建一个个博客/2.jpg)
+</code></pre><p><strong>根据運行結果 我們可以看出來：</strong></p>
 <p><code>beforecreated</code>：<code>el</code> 和 <code>data</code> 并未初始化<br><code>created</code>:完成了 <code>data</code> 数据的初始化，<code>el</code>没有<br><code>beforeMount</code>：完成了 <code>el</code> 和 <code>data</code> 初始化<br><code>mounted</code> ：完成挂载另外在标红处，在挂載之前我们能发现<code>el</code>还是 <code></code>，</p>
 <p><img src="/2019/04/15/vue探索之路-生命周期钩子函数/1.jpg" alt="logo"></p>
 <p>这里就是应用的 Virtual DOM（虚拟Dom）技术，先把坑占住了。到后面<code>mounted</code>挂载的时候再把值渲染进去。</p>
