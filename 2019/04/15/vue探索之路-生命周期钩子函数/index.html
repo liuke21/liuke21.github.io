@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue探索之路--生命周期钩子函数 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="点击阅读更多">
+  <meta name="description" content="生命周期钩子函数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue探索之路--生命周期钩子函数">
 <meta property="og:url" content="http://yoursite.com/2019/04/15/vue探索之路-生命周期钩子函数/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="点击阅读更多">
+<meta property="og:description" content="生命周期钩子函数">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg">
 <meta property="og:image" content="https://pic3.zhimg.com/80/v2-07f09d8bb03f4b8e10739f39d0cf53da_hd.jpg">
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-01f24fda0c18938012e4c0bd4611e9b3_hd.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/80/v2-8e13a31042085b1264dc49dd2f41a808_hd.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/80/v2-789c813d0f551b0a2cb0705c705e47ec_hd.jpg">
-<meta property="og:updated_time" content="2019-04-16T08:02:23.498Z">
+<meta property="og:updated_time" content="2019-04-16T08:09:49.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue探索之路--生命周期钩子函数">
-<meta name="twitter:description" content="点击阅读更多">
+<meta name="twitter:description" content="生命周期钩子函数">
 <meta name="twitter:image" content="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -176,7 +176,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>点击阅读更多<br><a id="more"></a><br><img src="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg" alt="图片"><br>对于执行顺序和什么时候，下面我们将结合代码去看看钩子函数的执行:</p>
+        <p>生命周期钩子函数<br><a id="more"></a><br><img src="https://pic3.zhimg.com/80/v2-c4d79cab80ec8fc6aff46bb3b684e572_hd.jpg"></p>
+<p>对于执行顺序和什么时候，下面我们将结合代码去看看钩子函数的执行:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -254,18 +255,17 @@
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p><img src="https://pic3.zhimg.com/80/v2-07f09d8bb03f4b8e10739f39d0cf53da_hd.jpg" alt="图片"></p>
-<p><strong>根据運行結果 我們可以看出來：</strong></p>
+</code></pre><p><img src="https://pic3.zhimg.com/80/v2-07f09d8bb03f4b8e10739f39d0cf53da_hd.jpg"><br><strong>根据運行結果 我們可以看出來：</strong></p>
 <p><code>beforecreated</code>：<code>el</code> 和 <code>data</code> 并未初始化<br><code>created</code>:完成了 <code>data</code> 数据的初始化，<code>el</code>没有<br><code>beforeMount</code>：完成了 <code>el</code> 和 <code>data</code> 初始化<br><code>mounted</code> ：完成挂载另外在标红处，在挂載之前我们能发现<code>el</code>还是 <code></code>，</p>
 <!-- ![](https://pic4.zhimg.com/80/v2-01f24fda0c18938012e4c0bd4611e9b3_hd.jpg) -->
 <p><img src="https://pic4.zhimg.com/80/v2-01f24fda0c18938012e4c0bd4611e9b3_hd.jpg"><br>这里就是应用的 Virtual DOM（虚拟Dom）技术，先把坑占住了。到后面<code>mounted</code>挂载的时候再把值渲染进去。</p>
 <p>接下來我們看<code>update</code>鈎子函數：</p>
 <p>在控制台輸入<code>：app.message= &#39;yes !! I do&#39;;</code>会触发<code>beforeupdate</code>和<code>update</code>函数</p>
-<p><img src="https://pic1.zhimg.com/80/v2-8e13a31042085b1264dc49dd2f41a808_hd.jpg" alt></p>
+<p><img src="https://pic1.zhimg.com/80/v2-8e13a31042085b1264dc49dd2f41a808_hd.jpg"></p>
 <p><strong><code>destroy</code> 相关</strong><br>在console里执行下命令对 vue实例进行销毁。</p>
 <p>在console中把实例销毁：触发<code>destory</code>函数</p>
 <pre><code>app.$destroy();
-</code></pre><p><img src="https://pic1.zhimg.com/80/v2-789c813d0f551b0a2cb0705c705e47ec_hd.jpg" alt></p>
+</code></pre><p><img src="https://pic1.zhimg.com/80/v2-789c813d0f551b0a2cb0705c705e47ec_hd.jpg"></p>
 <p>我们再重新改变message的值，vue不再对此动作进行响应了。但是原先生成的dom元素还存在，可以这么理解，执行了destroy操作。</p>
 <p>##[我的官网]:<br>   <a href="http://www.liukek.club" target="_blank" rel="noopener">www.liukek.club</a></p>
 
