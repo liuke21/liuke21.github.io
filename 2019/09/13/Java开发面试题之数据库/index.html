@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue探索之路--父子组件通信 | Liu Ke</title>
+  <title>Java开发面试题之数据库 | Liu Ke</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.props和$emit:">
-<meta name="keywords" content="-vue -组件通信">
+  <meta name="description" content="（一）什么是存储过程？有哪些优缺点？&amp;emsp;&amp;emsp;存储过程是一些预编译的SQL语句。">
+<meta name="keywords" content="-数据库面试题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue探索之路--父子组件通信">
-<meta property="og:url" content="http://yoursite.com/2019/04/15/vue探索之路-父子组件通信/index.html">
+<meta property="og:title" content="Java开发面试题之数据库">
+<meta property="og:url" content="http://yoursite.com/2019/09/13/Java开发面试题之数据库/index.html">
 <meta property="og:site_name" content="Liu Ke">
-<meta property="og:description" content="1.props和$emit:">
+<meta property="og:description" content="（一）什么是存储过程？有哪些优缺点？&amp;emsp;&amp;emsp;存储过程是一些预编译的SQL语句。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-16T12:41:28.217Z">
+<meta property="og:updated_time" content="2019-09-13T13:13:33.425Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue探索之路--父子组件通信">
-<meta name="twitter:description" content="1.props和$emit:">
+<meta name="twitter:title" content="Java开发面试题之数据库">
+<meta name="twitter:description" content="（一）什么是存储过程？有哪些优缺点？&amp;emsp;&amp;emsp;存储过程是一些预编译的SQL语句。">
   
     <link rel="alternative" href="/atom.xml" title="Liu Ke" type="application/atom+xml">
   
@@ -151,7 +151,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue探索之路-父子组件通信" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java开发面试题之数据库" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -163,103 +163,42 @@
         
   
     <h1 class="article-title" itemprop="name">
-      vue探索之路--父子组件通信
+      Java开发面试题之数据库
     </h1>
   
 
         
-        <a href="/2019/04/15/vue探索之路-父子组件通信/" class="archive-article-date">
-  	<time datetime="2019-04-15T14:17:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
+        <a href="/2019/09/13/Java开发面试题之数据库/" class="archive-article-date">
+  	<time datetime="2019-09-13T12:22:35.995Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>1.props和$emit:</strong><br><a id="more"></a><br>父组件向子组件传递数据是通过prop传递的，子组件传递数据给父组件是通过$emit触发事件来做到的。</p>
-<pre><code>Vue.component(&apos;child&apos;,{
-data(){
-return {
-mymessage:this.message
-}
-},
-template:`
-&lt;div&gt;&lt;input type=&quot;text&quot; v-model=&quot;mymessage&quot; @input=&quot;passData(mymessage)&quot;&gt; &lt;/div&gt;&apos;,
-props:[&apos;message&apos;],//得到父组件传递过来的数据
-methods:{
-passData(val){
-//触发父组件中的事件
-this.$emit(&apos;getChildData&apos;,val)
-}
-}
-})
-Vue.component(&apos;parent&apos;,{
-template:`
-&lt;div&gt;
-&lt;p&gt;this is parent compoent!&lt;/p&gt;
-&lt;child :message=&quot;message&quot; v-on:getChildData=&quot;getChildData&quot;&gt;&lt;/child&gt;
-&lt;/div&gt;
-data(){
-return {
-message:&apos;hello&apos;
-}
-},
-methods:{
-//执行子组件触发的事件
-getChildData(val){
-console.log(val)
-}
-}
-})
-var app=new Vue({
-el:&apos;#app&apos;,
-template:
-&lt;div&gt;
-&lt;parent&gt;&lt;/parent&gt;
-&lt;/div&gt;
-})
-</code></pre><p><strong>2.v-model</strong></p>
-<p>父组件通过v-model传递值给子组件时，会自动传递一个value的prop属性，在子组件中通过this.$emit(‘input’,val)自动修改v-model绑定的值</p>
-<pre><code>Vue.component(&apos;child&apos;,{
-props:{
-value:String, //v-model会自动传递一个字段为value的prop属性
-},
-data(){
-return {
-mymessage:this.value
-}
-},
-methods:{
-changeValue(){
-this.$emit(&apos;input&apos;,this.mymessage);//通过如此调用可以改变父组件上v-model绑定的值
-}
-},
-template:`
-&lt;div&gt;
-&lt;input type=&quot;text&quot; v-model=&quot;mymessage&quot; @change=&quot;changeValue&quot;&gt;
-&lt;/div&gt;
-})
-Vue.component(&apos;parent&apos;,{
-template:`
-&lt;div&gt;
-&lt;p&gt;this is parent compoent!&lt;/p&gt;
-&lt;p&gt;{{message}}&lt;/p&gt;
-&lt;child v-model=&quot;message&quot;&gt;&lt;/child&gt;
-&lt;/div&gt;
-`,
-data(){
-return {
-message:&apos;hello&apos;
-}
-}
-})
-var app=new Vue({
-el:&apos;#app&apos;,
-template:&apos;&lt;div&gt;
-             &lt;parent&gt;&lt;/parent&gt;
-          &lt;/div&gt;&apos;
-})
-</code></pre>
+        <p><strong>（一）什么是存储过程？有哪些优缺点？</strong><br>&emsp;&emsp;存储过程是一些预编译的SQL语句。<br><a id="more"></a><br>&emsp;&emsp;更加直白的理解：存储过程可以说是一个记录集，它由一些T-SQL语句组成的代码块，这些语句像一个方法一样实现一些功能（对单表或多表的增删查改）；然后再给这个代码块取一个名字，在用到这个功能的时候调用它就行了。</p>
+<ul>
+<li>存储过程是一个预编译的代码块，执行效率比较高；</li>
+<li>一个存储过程代替大量的代码块，执行效率比骄高；</li>
+<li>可以一定程度上确保数据安全；<h3 id="二-索引是什么？有什么作用以及优缺点？"><a href="#二-索引是什么？有什么作用以及优缺点？" class="headerlink" title="(二)索引是什么？有什么作用以及优缺点？"></a>(二)索引是什么？有什么作用以及优缺点？</h3>索引是对数据库中一个或多个列的值进行排序的结构，是帮助Mysql高效获取数据的数据结构；索引就是加快检索表中数据的方法。</li>
+<li>索引加快数据库的检索速度</li>
+<li>索引降低了插入、删除、修改等维护任务的速度</li>
+<li>唯一索引可以确保每一行数据的为一性</li>
+<li>通过使用索引，可以在查询的过程中使用优化隐藏器，提高系统的性能</li>
+<li>索引需要占据物理和数据空间<br>###（三）什么是事务？<br>事务是并发控制的基本单位。所谓的事务，它是一个操作序列，这些操作要么都执行，要么都不执行，它是一个不可分割的工作单位。事务是数据库维护数据一致性的单位，在每个事务结束是，都能保持数据的一致性。<br>###（四）什么是视图？以及视图的使用场景有哪些？<br>视图是一种虚拟的表，具有和物理表相同的功能，可以对视图进行增删查改的操作，视图通常是一个或者多个表的联合；对视图的修改不影响基本表。它使我们获取数据更容易。</li>
+<li>只暴露部分字段给用户，所以就见一个虚表，就是视图。</li>
+<li><p>查询的数据来源于不同的表，可以建一个视图，把多表查询的结果放在一张表中<br>###（五）超键、候选键、主键、外键分别是什么？</p>
+</li>
+<li><p>超键：在关系中能唯一标识元组的属性集称为关系模式的超键。一个属性可以为作为一个超键，多个属性组合在一起也可以作为一个超键。超键包含候选键和主键。</p>
+</li>
+<li>候选键：是最小超键，即没有冗余元素的超键。</li>
+<li>主键：数据库表中对储存数据对象予以唯一和完整标识的数据列或属性的组合。一个数据列只能有一个主键，且主键的取值不能缺失，即不能为空值（Null）。</li>
+<li>外键：在一个表中存在的另一个表的主键称此表的外键。<br>###（六）说一说三个范式？</li>
+<li>第一范式（1NF）：数据库表中的字段都是单一属性的，不可再分。这个单一属性由基本类型构成，包括整性、实数、字符型、罗辑型、日期型等；</li>
+<li>第二范式（2NF）:数据库表中不存在非关键字对任一候选关键字的部分函数依赖（存在组合关键字中的某些字段决定非关键字段的情况），也即所有非关键字段都完全依赖任意关键字。</li>
+<li>第三范式（3NF）：在第二范式的基础上，数据表中如果不存在非关键字段对任一候选关键字段的传递函数依赖则符合第三范式。所谓传递函数依赖，指的是如 果存在”A → B → C”的决定关系，则C传递函数依赖于A。因此，满足第三范式的数据库表应该不存在如下依赖关系： 关键字段 → 非关键字段 x → 非关键字段y</li>
+</ul>
+
       
 
       
@@ -298,7 +237,7 @@ template:&apos;&lt;div&gt;
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-vue -组件通信</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-数据库面试题</a>
         		</li>
       		
 		</ul>
@@ -354,7 +293,7 @@ template:&apos;&lt;div&gt;
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/15/vue探索之路-父子组件通信/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/13/Java开发面试题之数据库/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -368,15 +307,11 @@ template:&apos;&lt;div&gt;
   
 <nav id="article-nav">
   
-    <a href="/2019/04/15/vue探索之路-生命周期钩子函数/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vue探索之路--生命周期钩子函数
-        
-      </div>
-    </a>
   
+    <a href="/2019/09/13/数据结构复习总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据库复习总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -412,7 +347,7 @@ template:&apos;&lt;div&gt;
 <link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
 <script src="https://jjeejj.github.io/js/gitment.js"></script><script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2019/04/15/vue探索之路-父子组件通信/",
+  id: "http://yoursite.com/2019/09/13/Java开发面试题之数据库/",
   owner: 'liuke21',
   repo: 'liuke21.github.io',
   oauth: {
