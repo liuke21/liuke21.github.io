@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>数据库复习总结 | Liu Ke</title>
+  <title>Java开发面试题之集合 | Liu Ke</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据库特点：1.能够长期保存 2.支持共享 3.减少冗余">
-<meta name="keywords" content="-数据库知识点总结">
+  <meta name="description" content="(一)说说常见的集合有哪些？">
+<meta name="keywords" content="-java基础之集合面试题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库复习总结">
-<meta property="og:url" content="http://yoursite.com/2019/09/13/数据结构复习总结/index.html">
+<meta property="og:title" content="Java开发面试题之集合">
+<meta property="og:url" content="http://yoursite.com/2019/09/15/Java开发面试题之集合/index.html">
 <meta property="og:site_name" content="Liu Ke">
-<meta property="og:description" content="数据库特点：1.能够长期保存 2.支持共享 3.减少冗余">
+<meta property="og:description" content="(一)说说常见的集合有哪些？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-15T06:55:56.384Z">
+<meta property="og:updated_time" content="2019-09-15T12:25:48.705Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库复习总结">
-<meta name="twitter:description" content="数据库特点：1.能够长期保存 2.支持共享 3.减少冗余">
+<meta name="twitter:title" content="Java开发面试题之集合">
+<meta name="twitter:description" content="(一)说说常见的集合有哪些？">
   
     <link rel="alternative" href="/atom.xml" title="Liu Ke" type="application/atom+xml">
   
@@ -151,7 +151,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-数据结构复习总结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java开发面试题之集合" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -163,33 +163,21 @@
         
   
     <h1 class="article-title" itemprop="name">
-      数据库复习总结
+      Java开发面试题之集合
     </h1>
   
 
         
-        <a href="/2019/09/13/数据结构复习总结/" class="archive-article-date">
-  	<time datetime="2019-09-13T07:14:37.822Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-13</time>
+        <a href="/2019/09/15/Java开发面试题之集合/" class="archive-article-date">
+  	<time datetime="2019-09-15T11:08:37.802Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>数据库特点：</strong><br>1.能够长期保存 2.支持共享 3.减少冗余</p>
-<a id="more"></a>
-<hr>
-<p>   <strong>数据库查询语言（DQL）</strong><br>             &emsp; <strong>简单查询</strong>：<code>select [distinct] * |{列明|表达式} [as] [列别名] from 表明;</code><br>             &emsp; &emsp; &emsp;&emsp;&emsp; 特殊运算符：esacpe :<code>select ename from emp where ename like &#39;s\_T&#39; escape &#39;\&#39;;</code><br>             &emsp; &emsp;&emsp; &emsp; &emsp; 运算符优先级：<code>算数 &gt; 比较 &gt; 特殊比较 &gt; not &gt; and &gt; or;</code><br>              &emsp; <strong>函数</strong>：<br>         &emsp; &emsp; &emsp; &emsp;<strong>单行函数</strong>：<br>                &emsp; &emsp; &emsp; &emsp;&emsp; &emsp;字符类型：substr、instr(返回第几个字母的下标)、rpad(右填充)、<br>               &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; 数字类型：round(保留几位小数，向上取整)、 trunc(oracle保留接位小数，向下取整)、TRUNCATE(mysql保留接位小数，向下取整)<br>              &emsp; &emsp;  &emsp; &emsp; &emsp; &emsp;日期类型：sysdate当前系统时间<br>                    &emsp; &emsp;    &emsp; &emsp; &emsp; &emsp; 时间差：Oracle：<code>select mounths_between(sysdate,hiredate) from emp;</code><br>                    &emsp; &emsp;            &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;mysql: <code>select TIMESTAMPDIFF(MOUNTH,&#39;2019-12-01&#39;,&#39;2009-09-01&#39;);</code><br>                    &emsp; &emsp;  &emsp; &emsp; &emsp; &emsp;   日期转换：Oracle：<code>to_char(date,&#39;yyyy-mm-dd&#39;);</code><br>                       &emsp; &emsp;         &emsp; &emsp; &emsp; &emsp;  mysql:<code>select date_format(now(),&#39;%Y/%m/%d&#39;);</code><br>             &emsp; &emsp;  &emsp; &emsp; &emsp; &emsp; 空值计算：Oracle：<code>select nvl(common,0)+sal from emp;</code><br>                    &emsp; &emsp;    &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; MYSQL:<code>select ifnull(commom,0)+sal from emp;</code><br>       &emsp; &emsp;  &emsp; &emsp;<strong> 多行函数：</strong>sum、avg、count、max、min<br>       &emsp;  <strong> 分组语句：</strong>group by 分组条件用having补充<br>    &emsp; <strong>多表连接</strong>：内连接、外连接<br>            &emsp; &emsp;   &emsp; &emsp; sql99:sql标准<br>            &emsp; &emsp;   &emsp; &emsp; 交叉连接： <code>select * from emp cross join dept;</code><br>               &emsp; &emsp;     &emsp; &emsp;自然连接:  <code>select  * from emp nautre join dept;</code>(默认等两个相等的字段进行等值比较)<br>                &emsp; &emsp;   &emsp; &emsp; using连接: <code>select * from emp join dept using(deotno)</code><br>                &emsp; &emsp;   &emsp; &emsp; on连接：   <code>select * from emop right join dept on emp.deptno=dept.deptno;</code><br>                 &emsp; &emsp;  &emsp; &emsp; 外连接：    左外、右外<br>   &emsp;  <strong>子查询</strong>：单表查询不希望多表来做<br>           &emsp; &emsp; &emsp; &emsp;  <code>select * from emp where sal&gt;all(select sal from emp where ename=&#39;SMITH&#39;);</code><br>    &emsp; <strong>相关子查询：</strong>子查询依赖主查询的数据作为条件<br>          &emsp; &emsp; &emsp; &emsp;   <code>selec ename,(select dname from dept where dept.deptno=emp.deptno) from emp;</code><br>    &emsp; <strong>分页：</strong><br>                  &emsp;  &emsp;  &emsp;  &emsp;Oracle:<code>select rownum ,a.* from (select * from emp order by sal desc) a wherer rownum &lt;5</code><br>                  &emsp;  &emsp;  &emsp;  &emsp;Mysql:<code>select * from emp order by sal desc limit 0,5;</code><br><strong>数据库操作语言（DML）</strong>: oracle 需要commit才能提交，mysql默认自动提交；<br>     &emsp; &emsp;delete: <code>delete from emp;</code><br>   &emsp; &emsp;  insert: <code>insert into dept(deptno,dname) valuses(50,&#39;liuke&#39;);</code><br>   &emsp; &emsp;  update: <code>update emp set sal=sal*1.2;</code></p>
-<p><strong>事务处理语言（TPL）</strong>：<br>   &emsp; &emsp;  事务：是数据库操作的最小工作单元，是作为单个逻辑工作单元执行的一系列操作<br>       &emsp; &emsp; &emsp; &emsp;    事务结束：提交（全部操作都成功），回滚（全部操作都失败）<br>   &emsp; &emsp;  tpl:commit 、rollback、savepoint<br>  &emsp; &emsp;   事务：<br>       &emsp; &emsp;  <strong>一致性：</strong>事务的执行使数据从一个状态转换为另一个状态，但是对于整个数据的完整性保持稳定。<br>        &emsp; &emsp; <strong>原子性：</strong>操作这些指令时，要么全部执行成功，要么全部不执行。只要其中一个指令执行失败，<br>                &emsp; &emsp; &emsp; &emsp; &emsp;所有的指令都执行失败，数据进行回滚，回到执行指令前的数据状态。<br>        &emsp; &emsp;<strong> 隔离性：</strong>隔离性是当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，<br>                &emsp; &emsp; &emsp; &emsp; &emsp;不能被其他 事务的操作所干扰，多个并发事务之间要相互隔离。<br>        &emsp; &emsp; <strong>持久性：</strong>当事务正确完成后，它对于数据的改变是永久性的。</p>
-<p><strong>数据库定义语言（DDL）</strong>：<br>     &emsp; &emsp;<strong>建表：</strong><br>       &emsp; &emsp;  1.<code>create table lkk(
-          table_column_1 number,
-          table_column_2 char(3)
-          )</code><br>       &emsp; &emsp;  2.<code>create table tab2 as select * from emp;</code><br>     &emsp; &emsp;<strong>约束：</strong>保证数据的完整性<br>         &emsp; &emsp; &emsp; &emsp;非空：not null 、唯一：unique 、检查：check 主键：primary key 、<br>         &emsp; &emsp; &emsp; &emsp;外键：foreign key 使用外键的前提必须是主键<br>     &emsp; &emsp;<strong>删除表结构或表中数据：</strong><br>       &emsp; &emsp;  &emsp; &emsp; truncate：删除全表数据，性能强，无法还原，‘跑路用，嘻嘻嘻 ^0^;<br>         &emsp; &emsp; &emsp; &emsp;delete:删除可选数据，性能差，被事务控制；<br>        &emsp; &emsp; &emsp; &emsp; drop:删除表内数据和表结构，通过归档可以还原；<br>    &emsp; &emsp;<strong> 改变表中的列：</strong><br>        &emsp; &emsp; &emsp; &emsp; 新增一列：<code>alter table tablename add columnname varchar(5);</code><br>        &emsp; &emsp; &emsp; &emsp; 删除一列：<code>alter table tablename drop column columnname;</code><br>         &emsp; &emsp; &emsp; &emsp;修改某一列数据类型：<code>alter table tablename modify columnname number;</code><br>   &emsp; &emsp; <strong> 视图：</strong>本质是有自我权限的查询语句，优点是可以管理自我权限，不占空间<br>          &emsp; &emsp; &emsp; &emsp;<code>create view as select * from emp ;</code><br>     &emsp; &emsp;<strong>序列：</strong>一段可以生成指定规则的数列对象<br>         &emsp; &emsp; &emsp; &emsp;oracle:<code>create sequence ID
-                minvalue 1
-                maxvalue 999999
-                start with 88
-                increment by 1
-                cache 20</code><br>                &emsp; &emsp; &emsp; <code>select id.nextval from dual;</code><br>        &emsp; &emsp; &emsp; &emsp; mysql:<code>auto_creament</code>必须是主键<br>    &emsp; &emsp; <strong>索引：</strong>提高查询性能，索引是加在某一列上</p>
+        <p><strong>(一)说说常见的集合有哪些？</strong><br><a id="more"></a><br>Map接口和Collection接口是所有集合框架的父接口：<br>1.Collection接口的子接口：List接口和Set接口<br>&emsp;&emsp;List接口的实现类：ArrayList、LinkedList、Vector<br>&emsp;&emsp;Set接口的实现类：HashSet、TreeSet、LinkedHashSet<br>2.Map接口的实现类：HashMap、TreeMap、HashTable、ConcurrentHashMap以及Properties<br><strong>（二）HashMap与HashTable的区别？</strong><br>1.HashMap没有考虑同步，是线程不安全的；HashTable线程安全；<br>2.HashMap允许空值，HashTable不允许空值；<br>3.HashMap继承AbstractMap类；HashTable继承Dictionary类；<br><strong>（三）HashMap是怎么解决哈希冲突的？</strong><br>Hash，就是把任意长度的输入通过散列算法，变换成固定长度的输出（哈希值）；<br>Hash冲突：当两个不同的输入值，根据同一散列函数计算出相相同的散列值；<br>HashMap数据结构是数组和链表的组合，通过链地址法解决哈希冲突；把哈希值相同的放在同一个数组中，即将拥有相同的哈希值的对象组织成一个链表放在对应的数组中<br><strong>（四）HashMap为什么不直接使用hashCod（）处理后的哈希值直接作为table的下标？</strong><br>hashCode()方法返回的是int整形类型，范围：-（2^31）~(2^31-1),约有49亿个映射空间，而HashMap的容量范围在16~2……30,通常情况下是取不到最大值的，从而导致hashCode()计算的哈希值不在数组的大小范围内，进而无法匹配；</p>
+<h6 id="解决方案：1-hashMap自己实现hash-方法，通过两次扰动加大哈希值低位的随机性使得分布更加均匀，最终减少哈希冲突；使得他自己的哈希值高低位自行进行异或位运算，降低哈希碰撞概率也使得数据分布均匀；2-在保证数组长度为2的幂次方的时候，使用hash-运算之后的值位运算来获取数组下标的方式进行存储；"><a href="#解决方案：1-hashMap自己实现hash-方法，通过两次扰动加大哈希值低位的随机性使得分布更加均匀，最终减少哈希冲突；使得他自己的哈希值高低位自行进行异或位运算，降低哈希碰撞概率也使得数据分布均匀；2-在保证数组长度为2的幂次方的时候，使用hash-运算之后的值位运算来获取数组下标的方式进行存储；" class="headerlink" title="解决方案：1.hashMap自己实现hash()方法，通过两次扰动加大哈希值低位的随机性使得分布更加均匀，最终减少哈希冲突；使得他自己的哈希值高低位自行进行异或位运算，降低哈希碰撞概率也使得数据分布均匀；2.在保证数组长度为2的幂次方的时候，使用hash()运算之后的值位运算来获取数组下标的方式进行存储；"></a>解决方案：1.hashMap自己实现hash()方法，通过两次扰动加大哈希值低位的随机性使得分布更加均匀，最终减少哈希冲突；使得他自己的哈希值高低位自行进行异或位运算，降低哈希碰撞概率也使得数据分布均匀；2.在保证数组长度为2的幂次方的时候，使用hash()运算之后的值位运算来获取数组下标的方式进行存储；</h6><p><strong>（五）为什么HashMap中String、Integer这样的包装类数和作为K</strong><br>包装类能够保证hash值的不可更改性和计算准确性，能够有效的减少hash碰撞的几率<br>1.都是final类型，即不可变性，保证key的不可更改性，不会存在获取hash值不同的情况<br>2.内部已经重写equal、hashCode等方法<br><strong>（六）Hashset是如何保证数据不可重复的？</strong><br>HashSet的底层其实就是HashMap,只不过hashSet实现了Set接口并且把数据作为K值,而v值一直使用相同的虚值保存，由于hashMap的K值本身就不允许重复</p>
 
       
 
@@ -229,7 +217,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-数据库知识点总结</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-java基础之集合面试题</a>
         		</li>
       		
 		</ul>
@@ -285,7 +273,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/13/数据结构复习总结/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/15/Java开发面试题之集合/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -299,18 +287,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/09/13/Java开发面试题之数据库/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java开发面试题之数据库
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/16/通过github创建一个个博客/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">通过github创建一个个人博客</div>
+    <a href="/2019/09/15/Java开发面试题之计算机网络/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java开发面试题之计算机网络</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -348,7 +327,7 @@
 <link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
 <script src="https://jjeejj.github.io/js/gitment.js"></script><script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2019/09/13/数据结构复习总结/",
+  id: "http://yoursite.com/2019/09/15/Java开发面试题之集合/",
   owner: 'liuke21',
   repo: 'liuke21.github.io',
   oauth: {
