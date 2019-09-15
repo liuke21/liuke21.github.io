@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Liu Ke">
 <meta property="og:description" content="（一）什么是存储过程？有哪些优缺点？&amp;emsp;&amp;emsp;存储过程是一些预编译的SQL语句。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-15T05:52:07.370Z">
+<meta property="og:updated_time" content="2019-09-15T07:03:04.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java开发面试题之数据库">
 <meta name="twitter:description" content="（一）什么是存储过程？有哪些优缺点？&amp;emsp;&amp;emsp;存储过程是一些预编译的SQL语句。">
@@ -192,9 +192,9 @@
 <li>候选键：是最小超键，即没有冗余元素的超键。</li>
 <li>主键：数据库表中对储存数据对象予以唯一和完整标识的数据列或属性的组合。一个数据列只能有一个主键，且主键的取值不能缺失，即不能为空值（Null）。</li>
 <li>外键：在一个表中存在的另一个表的主键称此表的外键。<br><strong>（六）说一说三个范式？</strong></li>
-<li>第一范式（1NF）：数据库表中的字段都是单一属性的，不可再分。这个单一属性由基本类型构成，包括整性、实数、字符型、罗辑型、日期型等；</li>
-<li>第二范式（2NF）:数据库表中不存在非关键字对任一候选关键字的部分函数依赖（存在组合关键字中的某些字段决定非关键字段的情况），也即所有非关键字段都完全依赖任意关键字。</li>
-<li>第三范式（3NF）：在第二范式的基础上，数据表中如果不存在非关键字段对任一候选关键字段的传递函数依赖则符合第三范式。所谓传递函数依赖，指的是如 果存在”A → B → C”的决定关系，则C传递函数依赖于A。因此，满足第三范式的数据库表应该不存在如下依赖关系： 关键字段 → 非关键字段 x → 非关键字段y</li>
+<li>第一范式（1NF）：列不可再分；数据库表中的字段都是单一属性的，不可再分。这个单一属性由基本类型构成，包括整性、实数、字符型、罗辑型、日期型等；</li>
+<li>第二范式（2NF）:行可以唯一区分，主键约束；数据库表中不存在非关键字对任一候选关键字的部分函数依赖（存在组合关键字中的某些字段决定非关键字段的情况），也即所有非关键字段都完全依赖任意关键字。</li>
+<li>第三范式（3NF）：表中非主属性不能依赖其它表的非主属性，外键约束；在第二范式的基础上，数据表中如果不存在非关键字段对任一候选关键字段的传递函数依赖则符合第三范式。所谓传递函数依赖，指的是如 果存在”A → B → C”的决定关系，则C传递函数依赖于A。因此，满足第三范式的数据库表应该不存在如下依赖关系： 关键字段 → 非关键字段 x → 非关键字段y</li>
 </ul>
 
       
@@ -304,6 +304,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/09/15/计算机网络/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java开发面试题之计算机网络
+        
+      </div>
+    </a>
   
   
     <a href="/2019/09/13/数据结构复习总结/" id="article-nav-older" class="article-nav-link-wrap">
@@ -456,11 +465,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-vue -组件通信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-vue -vue生命周期</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-vue -组件通信</a>
+                <a href="javascript:void(0)" class="js-tag color5">-计算机网络面试题</a>
               </li>
              
               <li class="article-tag-list-item">
